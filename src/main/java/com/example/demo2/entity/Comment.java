@@ -26,20 +26,4 @@ public class Comment extends Auditable{
         this.link = link;
     }
 
-    //convert the Comment to string with its link, without going in infinite loop
-    public String toString2() {
-        return "Comment{" +
-                "id=" + id +
-                ", body='" + body + '\'' +
-                ", link=" + link.toString3() +
-                '}';
-    }
-
-    //convert the Comment to string without its link
-    public String toString3() {
-        return "Comment{" +
-                "id=" + id +
-                ", body='" + body + '\'' +
-                '}';
-    }
 }
