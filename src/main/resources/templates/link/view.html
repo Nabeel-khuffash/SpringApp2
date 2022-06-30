@@ -9,6 +9,11 @@
 
 <div class="container">
 
+
+    <div class="alert alert-success" role="alert" th:if="${success}">
+        your new link created!
+    </div>
+
     <!-- link -->
     <div class="row link">
         <div class="col-1">
@@ -24,7 +29,7 @@
                 <span class="domain">(<a th:href="${link.url}" th:text="${link.getDomainName()}" >therealdanvega.com</a>)</span>
             </p>
             <p class="tagline ">submitted
-                <time title="${link.getCreationDate()}" th:datetime="${link.getCreationDate()}" class="live-timestamp">2 hours ago</time> by
+                <time th:title="${link.getCreationDate()}" th:datetime="${link.getCreationDate()}" class="live-timestamp" th:text="${link.getPrettyTime()}">2 hours ago</time> by
                 <a href="https://www.reddit.com/user/therealdanvega" class="author">therealdanvega</a>
                 <span class="userattrs"></span>
             </p>
@@ -39,7 +44,7 @@
     <div id="comments" class="comments">
         <div class="row header">
             <div class="col-1">&nbsp;</div>
-            <div class="col-11 title">
+            <div class="col-11 title" th:text="|${link.getComments().size()} comments|">
                 all 21 comments
             </div>
         </div>

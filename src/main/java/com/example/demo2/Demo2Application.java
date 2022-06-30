@@ -1,5 +1,6 @@
 package com.example.demo2;
 
+import com.example.demo2.controllers.LinkController;
 import com.example.demo2.entity.Comment;
 import com.example.demo2.entity.Link;
 import com.example.demo2.repository.CommentRepository;
@@ -18,6 +19,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 public class Demo2Application {
 
 	private static final Logger log = LoggerFactory.getLogger(SpringApplication.class);
+
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(Demo2Application.class, args);
